@@ -169,7 +169,22 @@ public class Test_Wise_Login_Page extends CommonToAllTest {
         logger.info("Done the Test cases");
 
     }
+    @Owner("Uvesh rajput")
+    @Description("TC#11- Verify that Notice Dashboard Heading is Present on the Login Page")
+    @Test
+    public void test_NoticeBoardPresent() throws Exception {
+        logger.info("Starting the TC#11");
+        logger.info("TC#11- Verify that Notice Dashboard Heading is Present on the Login Page");
+        // Page Class Code (POM Code) - 2
+        LoginPage loginPage  = new LoginPage(DriverManager.getDriver());
+        String txt =  loginPage.verify_Notice_dashBoard();
 
+        logger.info("Assertion is Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+       Assert.assertEquals(txt,PropertiesReader.readKey("notice"));
+        logger.info("Done the Test cases");
+
+    }
 
 
 

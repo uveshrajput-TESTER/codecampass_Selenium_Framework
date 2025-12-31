@@ -35,7 +35,7 @@ private final By message_InvalidEmail_forgot = By.xpath("//span[contains(text(),
 private final By message_forgot_empty_username = By.xpath("//div[contains(text(),'Please enter your username')]");
 private final By message_forgot_empty_Email = By.xpath("//div[contains(text(),'Please enter your email')]");
 private final By message_forgot_unformated_Email = By.xpath("//div[contains(text(),'Please enter a valid email')]");
-
+private final By Notice_Board = By.xpath("//h3[normalize-space()='Notice Dashboard']");
     //    Step 2 - Actions
     public String loginToWiseLoginInvalidCreds(String user, String pwd) {
         openWiseUrl();
@@ -131,7 +131,12 @@ private final By message_forgot_unformated_Email = By.xpath("//div[contains(text
         String message = getText(message_forgot_unformated_Email);
         return message;
     }
-
+public String verify_Notice_dashBoard(){
+        openWiseUrl();
+        WaitHelpers.checkVisibility(driver,Notice_Board,5);
+        String message = getText(Notice_Board);
+        return  message;
+}
 
 
 
