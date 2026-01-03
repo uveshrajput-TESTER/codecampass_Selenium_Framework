@@ -17,10 +17,10 @@ public class LoginPage extends CommonToAllPage {
 
 
     // // Step 1 - Page Locators
-    private final By username = By.id("normal_login_userName");
-    private final By password = By.id("normal_login_password");
-    private final By LoginButton = By.xpath("//div[@class = \"ant-form-item-control-input-content\"]/button");
-    private final By remeberme = By.id("normal_login_remember");
+    private  final By username = By.id("normal_login_userName");
+    private  final By password = By.id("normal_login_password");
+    private  final By LoginButton = By.xpath("//div[@class = \"ant-form-item-control-input-content\"]/button");
+    private  final  By remeberme = By.id("normal_login_remember");
    private final By error_message_invalid_cred = By.xpath("//span[normalize-space()='Invalid user credentials!... Access Denied']");
    private final By error_message_empty_username_field = By.xpath("//div[@class = \"ant-form-item-explain-error\" ]");
  private final By error_message_empty_password_field = By.xpath("//div[@id = \"normal_login_password_help\"]/div[@class=\"ant-form-item-explain-error\"]");

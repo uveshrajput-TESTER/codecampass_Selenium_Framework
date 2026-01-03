@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class CommonToAllTest {
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         DriverManager.init();
     }
 
