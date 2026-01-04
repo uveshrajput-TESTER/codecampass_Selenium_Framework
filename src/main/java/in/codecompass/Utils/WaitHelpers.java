@@ -73,5 +73,10 @@ public class WaitHelpers {
             return DriverManager.getDriver().findElement(key);
         }
 
+        public static void elementToBeClickable(By elementLocation){
+           new WebDriverWait(DriverManager.getDriver(),Duration.ofSeconds(20)).until(ExpectedConditions.elementToBeClickable(elementLocation));
+        }
 
-    }
+
+
+}

@@ -5,6 +5,10 @@ import in.codecompass.Utils.PropertiesReader;
 import in.codecompass.Utils.WaitHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.Set;
 
 public class HomePage extends CommonToAllPage {
     WebDriver driver;
@@ -40,6 +44,12 @@ public class HomePage extends CommonToAllPage {
     private final By Dashboards_txt = By.xpath("//strong[normalize-space()='Dashboards']");
     private final By Task_Schedule_bySearch = By.xpath("//a[normalize-space()='Task & Schedule']");
     private final By Task_Schedule_txt = By.xpath("//strong[normalize-space()='Task & Schedule']");
+    private final By Setting_svg = By.xpath("//span[@aria-label=\"setting\"]");
+    private final By Language_option = By.xpath("//span[normalize-space()='Language']");
+    private final By Language_option2 = By.xpath("//span[@class='ant-dropdown-menu-title-content']");
+    private final By Arabic_option = By.xpath("//button[normalize-space()='Arabic']");
+    private final By Home_Arabic = By.xpath("//span[@class='ant-breadcrumb-link']");
+    private final By English_option = By.xpath("//button[normalize-space()='English']");
 
 
    public HomePage(WebDriver driver){
@@ -176,7 +186,32 @@ public HomePage Login (){
         String message = getText(Task_Schedule_txt);
         return message;
     }
-
+public String Change_to_Arabic(){
+       WaitHelpers.checkVisibility(driver,Setting_svg,5);
+       clickElement(Setting_svg);
+       clickElement(Language_option);
+       WaitHelpers.checkVisibility(driver,Arabic_option,5);
+       clickElement(Arabic_option);
+       WaitHelpers.checkVisibility(driver,Home_Arabic,5);
+       String message = getText(Home_Arabic);
+       return message;
+}
+public String Change_to_english(){
+    WaitHelpers.checkVisibility(driver,Setting_svg,5);
+    clickElement(Setting_svg);
+    clickElement(Language_option);
+    WaitHelpers.checkVisibility(driver,Arabic_option,5);
+    clickElement(Arabic_option);
+    WaitHelpers.checkVisibility(driver,Setting_svg,5);
+    clickElement(Setting_svg);
+    WaitHelpers.checkVisibility(driver,Language_option,10);
+    clickElement(Language_option);
+    WaitHelpers.checkVisibility(driver,English_option,10);
+    clickElement(English_option);
+    WaitHelpers.checkVisibility(driver,Home_txt,5);
+    String message = getText(Home_txt);
+    return message;
+}
 
 
 

@@ -193,6 +193,32 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         Assert.assertEquals(txt,PropertiesReader.readKey("TaskScheduler"));
         logger.info("Done the Test cases");
     }
+    @Owner("Uvesh rajput")
+    @Description("TC#14- Verify that Home Page convert into Arabic  ")
+    @Test
+    public void test_Change_To_Arabic() throws Exception {
+        logger.info("Starting the TC#14");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt =  homePage.Login().Change_to_Arabic();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,"الصفحة الرئيسية");
+        logger.info("Done the Test cases");
+    }
+    @Owner("Uvesh rajput")
+    @Description("TC#15- Verify that Home Page convert into Enlish from Arabic  ")
+    @Test
+    public void test_Change_To_English_fromArabic() throws Exception {
+        logger.info("Starting the TC#15");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt =  homePage.Login().Change_to_english();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("hometext"));
+        logger.info("Done the Test cases");
+    }
 
 
 
