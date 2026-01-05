@@ -3,10 +3,14 @@ package in.codecompass.Pages.PageObjectModel.Wise;
 import in.codecompass.Base.CommonToAllPage;
 import in.codecompass.Utils.PropertiesReader;
 import in.codecompass.Utils.WaitHelpers;
+import io.qameta.allure.testng.TestInstanceParameter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import java.util.Set;
 
@@ -50,7 +54,17 @@ public class HomePage extends CommonToAllPage {
     private final By Arabic_option = By.xpath("//button[normalize-space()='Arabic']");
     private final By Home_Arabic = By.xpath("//span[@class='ant-breadcrumb-link']");
     private final By English_option = By.xpath("//button[normalize-space()='English']");
-
+    private final By user_setting = By.xpath("//span[@class='ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-icon ant-dropdown-trigger css-1x5n6pw']//span[@aria-label='user']");
+    private final By Logout_button = By.xpath("//ul[@role='menu']//span[contains(text(),'Logout')]");
+    private final By logout_succesfully_message = By.xpath("//span[normalize-space()='Logout Successful']");
+    private final By change_passwordbutton = By.xpath("//span[normalize-space()='Change Password']");
+    private final By old_password_input = By.xpath("//input[@id='oldPassword']");
+   private final  By oldpasswordempty_mesage = By.xpath("//div[@class='ant-form-item-explain-error']");
+   private final By newpassword_input = By.xpath("//input[@id=\"newPassword\"]");
+   private final By newpasswordempty_mesage = By.xpath("//div[@id=\"newPassword_help\"]/div[@class=\"ant-form-item-explain-error\"]");
+   private final By confirmpassword_input = By.id("confirmPassword");
+   private final By confirmpasswordempty_mesage =  By.xpath("//div[@class=\"ant-form-item-explain-error\"]");
+   private final  By newpasswordlength_message = By.xpath("//div[normalize-space()='Password must be at least 8 characters long!']");
 
    public HomePage(WebDriver driver){
         this.driver = driver;
@@ -212,6 +226,66 @@ public String Change_to_english(){
     String message = getText(Home_txt);
     return message;
 }
+
+public  String  Logout_sucessfully(){
+       WaitHelpers.checkVisibility(driver,user_setting,5);
+       clickElement(user_setting);
+       WaitHelpers.checkVisibility(driver,Logout_button,5);
+       clickElement(Logout_button);
+       WaitHelpers.checkVisibility(driver,logout_succesfully_message,5);
+       String message = getText(logout_succesfully_message);
+    return message;
+}
+public String In_changePassword_EmptyoldPasswordfield(){
+    WaitHelpers.checkVisibility(driver,user_setting,5);
+    clickElement(user_setting);
+    WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+    clickElement(change_passwordbutton);
+    WaitHelpers.checkVisibility(driver,old_password_input,5);
+    enterInput(old_password_input,"ud");
+    Actions actions = new Actions(driver);
+    actions.keyDown(Keys.BACK_SPACE).keyDown(Keys.BACK_SPACE).build().perform();
+    WaitHelpers.checkVisibility(driver,oldpasswordempty_mesage,5);
+   String message =  getText(oldpasswordempty_mesage);
+   return message;
+}
+    public String In_changePassword_EmptyNewPasswordfield(){
+        WaitHelpers.checkVisibility(driver,user_setting,5);
+        clickElement(user_setting);
+        WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+        clickElement(change_passwordbutton);
+        WaitHelpers.checkVisibility(driver,newpassword_input,5);
+        enterInput(newpassword_input,"ud");
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.BACK_SPACE).keyDown(Keys.BACK_SPACE).build().perform();
+        WaitHelpers.checkVisibility(driver,newpasswordempty_mesage,5);
+        String message =  getText(newpasswordempty_mesage);
+        return message;
+    }
+    public String In_changePassword_EmptyConfirmPasswordfield(){
+        WaitHelpers.checkVisibility(driver,user_setting,5);
+        clickElement(user_setting);
+        WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+        clickElement(change_passwordbutton);
+        WaitHelpers.checkVisibility(driver,confirmpassword_input,5);
+        enterInput(confirmpassword_input,"ud");
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.BACK_SPACE).keyDown(Keys.BACK_SPACE).build().perform();
+        WaitHelpers.checkVisibility(driver,confirmpasswordempty_mesage,5);
+        String message =  getText(confirmpasswordempty_mesage);
+        return message;
+    }
+    public String In_changePassword_LengthnewPasswordfield(){
+        WaitHelpers.checkVisibility(driver,user_setting,5);
+        clickElement(user_setting);
+        WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+        clickElement(change_passwordbutton);
+        WaitHelpers.checkVisibility(driver,newpassword_input,5);
+        enterInput(newpassword_input,"ud");
+        WaitHelpers.checkVisibility(driver,newpasswordlength_message,5);
+        String message =  getText(newpasswordlength_message);
+        return message;
+    }
 
 
 

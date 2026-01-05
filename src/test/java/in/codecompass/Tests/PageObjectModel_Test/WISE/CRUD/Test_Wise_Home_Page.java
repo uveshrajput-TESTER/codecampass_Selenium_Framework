@@ -219,6 +219,61 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         Assert.assertEquals(txt,PropertiesReader.readKey("hometext"));
         logger.info("Done the Test cases");
     }
+    @Owner("Uvesh rajput")
+    @Description("TC#16- Verify that User Logout Successfully  ")
+    @Test
+    public void test_Logout_successfully() throws Exception {
+        logger.info("Starting the TC#16");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+
+       String txt =  homePage.Login().Logout_sucessfully();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("logoutmessage"));
+        logger.info("Done the Test cases");
+    }
+    @Owner("Uvesh rajput")
+    @Description("TC#17- Verify that the error 'Current Password is Mandatory' ")
+    @Test
+    public void test_verify_oldPasswordEmptyError() throws Exception {
+        logger.info("Starting the TC#17");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+
+        String txt = homePage.Login().In_changePassword_EmptyoldPasswordfield();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("emptyoldPasswrod"));
+        logger.info("Done the Test cases");
+    }
+    @Owner("Uvesh rajput")
+    @Description("TC#18- Verify that the error 'Enter your new password' ")
+    @Test
+    public void test_verify_newPasswordEmptyError() throws Exception {
+        logger.info("Starting the TC#18");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt = homePage.Login().In_changePassword_EmptyNewPasswordfield();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("emptynewPassword"));
+        logger.info("Done the Test cases");
+    }
+    @Owner("Uvesh rajput")
+    @Description("TC#19- Verify that the error 'Please confirm your new password' ")
+    @Test
+    public void test_verify_confirmPasswordEmptyError() throws Exception {
+        logger.info("Starting the TC#19");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt = homePage.Login().In_changePassword_LengthnewPasswordfield();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("lengthnewpassword"));
+        logger.info("Done the Test cases");
+    }
+
 
 
 

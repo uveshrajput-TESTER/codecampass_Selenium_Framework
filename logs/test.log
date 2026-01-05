@@ -576,3 +576,90 @@
 2026-01-04 23:53:14 INFO  Test_Wise_Login_Page - Starting the TC#15
 2026-01-04 23:53:23 INFO  Test_Wise_Login_Page - Assertion Started
 2026-01-04 23:53:23 INFO  Test_Wise_Login_Page - Done the Test cases
+2026-01-05 11:01:57 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:01:59 INFO  Test_Wise_Login_Page - Starting the TC#15
+2026-01-05 11:03:16 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:03:17 INFO  Test_Wise_Login_Page - Starting the TC#16
+2026-01-05 11:03:59 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:04:00 INFO  Test_Wise_Login_Page - Starting the TC#16
+2026-01-05 11:08:57 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:08:59 INFO  Test_Wise_Login_Page - Starting the TC#16
+2026-01-05 11:14:34 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:14:36 INFO  Test_Wise_Login_Page - Starting the TC#16
+2026-01-05 11:16:35 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:16:37 INFO  Test_Wise_Login_Page - Starting the TC#16
+2026-01-05 11:16:42 INFO  Test_Wise_Login_Page - Assertion Started
+2026-01-05 11:17:13 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:17:14 INFO  Test_Wise_Login_Page - Starting the TC#16
+2026-01-05 11:17:21 INFO  Test_Wise_Login_Page - Assertion Started
+2026-01-05 11:17:21 INFO  Test_Wise_Login_Page - Done the Test cases
+2026-01-05 11:38:55 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:38:56 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 11:47:00 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:47:01 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 11:49:40 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:49:41 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 11:55:22 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:55:24 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 11:59:39 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 11:59:41 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 12:01:07 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 12:01:08 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 12:03:33 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 12:03:36 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 12:09:40 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 12:09:42 INFO  Test_Wise_Login_Page - Starting the TC#17
+2026-01-05 12:09:47 INFO  Test_Wise_Login_Page - Assertion Started
+2026-01-05 12:09:47 INFO  Test_Wise_Login_Page - Done the Test cases
+2026-01-05 12:19:05 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 12:19:07 INFO  Test_Wise_Login_Page - Starting the TC#18
+2026-01-05 12:19:14 INFO  Test_Wise_Login_Page - Assertion Started
+2026-01-05 12:19:14 INFO  Test_Wise_Login_Page - Done the Test cases
+2026-01-05 12:35:38 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 12:35:40 INFO  Test_Wise_Login_Page - Starting the TC#19
+2026-01-05 12:35:46 INFO  Test_Wise_Login_Page - Assertion Started
+2026-01-05 12:35:46 INFO  Test_Wise_Login_Page - Done the Test cases
+2026-01-05 12:46:46 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 12:46:48 INFO  Test_Wise_Login_Page - Starting the TC#19
+2026-01-05 12:50:25 INFO  Utils - [TestNG] Running:
+  /home/uvesh/.cache/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+2026-01-05 12:50:27 INFO  Test_Wise_Login_Page - Starting the TC#19
+2026-01-05 12:50:33 INFO  Test_Wise_Login_Page - Assertion Started
+2026-01-05 12:50:33 INFO  Test_Wise_Login_Page - Done the Test cases
