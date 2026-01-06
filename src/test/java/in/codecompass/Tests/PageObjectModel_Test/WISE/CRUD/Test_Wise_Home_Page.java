@@ -261,7 +261,7 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         logger.info("Done the Test cases");
     }
     @Owner("Uvesh rajput")
-    @Description("TC#19- Verify that the error 'Please confirm your new password' ")
+    @Description("TC#19- Verify that the error 'Password must be at least 8 characters long!' ")
     @Test
     public void test_verify_confirmPasswordEmptyError() throws Exception {
         logger.info("Starting the TC#19");
@@ -273,6 +273,62 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         Assert.assertEquals(txt,PropertiesReader.readKey("lengthnewpassword"));
         logger.info("Done the Test cases");
     }
+    @Owner("Uvesh rajput")
+    @Description("TC#20- Verify that the error 'Password must include at least one uppercase letter, one numeric value, and one special character!' ")
+    @Test
+    public void test_verify_InvalidNewPassword() throws Exception {
+        logger.info("Starting the TC#20");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt = homePage.Login().In_changePassword_invalidnewpaswordfield();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("InvalidSyntaxnewpassword"));
+        logger.info("Done the Test cases");
+    }
+    @Owner("Uvesh rajput")
+    @Description("TC#21- Verify that the error 'The new password that you entered do not match!' ")
+    @Test
+    public void test_verify_confirmpasswordnotmatch() throws Exception {
+        logger.info("Starting the TC#21");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt = homePage.Login().In_changePassword_passwordnotsameasnewpassd();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("passworddontmatch"));
+        logger.info("Done the Test cases");
+    }
+    @Owner("Uvesh rajput")
+    @Description("TC#23- Verify that the error ' Invalid old password, pls enter correct existing password' ")
+    @Test
+    public void test_verify_23() throws Exception {
+        logger.info("Starting the TC#23");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt = homePage.Login().In_changePassword_Invalidoldpassword();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("invalidoldpassword"));
+        logger.info("Done the Test cases");
+    }
+    @Owner("Uvesh rajput")
+    @Description("TC#24- Verify that the error 'The new password must be different from the current password.' ")
+    @Test
+    public void test_verify_Same_old_new_Pasword() throws Exception {
+        logger.info("Starting the TC#24");
+        // Page Class Code (POM Code) - 2
+        HomePage homePage = new HomePage(DriverManager.getDriver());
+        String txt = homePage.Login().In_changePassword_Sameold_new_Pasword();
+        logger.info("Assertion Started");
+        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
+        Assert.assertEquals(txt,PropertiesReader.readKey("Same_old_newpAssword"));
+        logger.info("Done the Test cases");
+    }
+
+
+
+
 
 
 

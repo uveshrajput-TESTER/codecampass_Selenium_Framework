@@ -4,6 +4,7 @@ import in.codecompass.Driver.DriverManager;
 import in.codecompass.Utils.PropertiesReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import static in.codecompass.Driver.DriverManager.getDriver;
 
@@ -36,5 +37,10 @@ public class CommonToAllPage {
 
     public String getText(WebElement by){
         return by.getText();
+    }
+    public void clickUsingActions(By by){
+        WebElement element = getDriver().findElement(by);
+        Actions actions =new Actions(getDriver());
+        actions.click(element).build().perform();
     }
 }

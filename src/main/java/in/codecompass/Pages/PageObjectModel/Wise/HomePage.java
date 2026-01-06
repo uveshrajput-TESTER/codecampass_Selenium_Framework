@@ -65,6 +65,18 @@ public class HomePage extends CommonToAllPage {
    private final By confirmpassword_input = By.id("confirmPassword");
    private final By confirmpasswordempty_mesage =  By.xpath("//div[@class=\"ant-form-item-explain-error\"]");
    private final  By newpasswordlength_message = By.xpath("//div[normalize-space()='Password must be at least 8 characters long!']");
+   private final By newpasswordfieldInvalidSyntax_mesage = By.xpath("//div[normalize-space()='Password must include at least one uppercase letter, one numeric value, and one special character!']");
+   private final By confiempasswordfield_notsameasnewpassword_message = By.xpath("//div[contains(text(),'The new password that you entered do not match!')]");
+   private final By InvalidoldPassword_message = By.xpath("//span[normalize-space()  = \"Invalid old password, pls enter correct existing password\"]");
+   private final By submit_button = By.xpath("//button[@type='submit']");
+   private final By Sameold_newPassword = By.xpath("//span[normalize-space() = \"The new password must be different from the current password.\"]");
+
+
+
+
+
+
+
 
    public HomePage(WebDriver driver){
         this.driver = driver;
@@ -284,6 +296,60 @@ public String In_changePassword_EmptyoldPasswordfield(){
         enterInput(newpassword_input,"ud");
         WaitHelpers.checkVisibility(driver,newpasswordlength_message,5);
         String message =  getText(newpasswordlength_message);
+        return message;
+    }
+    public String In_changePassword_invalidnewpaswordfield(){
+        WaitHelpers.checkVisibility(driver,user_setting,5);
+        clickElement(user_setting);
+        WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+        clickElement(change_passwordbutton);
+        WaitHelpers.checkVisibility(driver,newpassword_input,5);
+        enterInput(newpassword_input,"dwdsdewfewff");
+        WaitHelpers.checkVisibility(driver,newpasswordfieldInvalidSyntax_mesage,5);
+        String message =  getText(newpasswordfieldInvalidSyntax_mesage);
+        return message;
+    }
+    public String In_changePassword_passwordnotsameasnewpassd(){
+        WaitHelpers.checkVisibility(driver,user_setting,5);
+        clickElement(user_setting);
+        WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+        clickElement(change_passwordbutton);
+        WaitHelpers.checkVisibility(driver,confirmpassword_input,5);
+        enterInput(confirmpassword_input,"dwdsdewfewff");
+        WaitHelpers.checkVisibility(driver,confiempasswordfield_notsameasnewpassword_message,5);
+        String message =  getText(confiempasswordfield_notsameasnewpassword_message);
+        return message;
+    }
+    public String In_changePassword_Invalidoldpassword(){
+        WaitHelpers.checkVisibility(driver,user_setting,5);
+        clickElement(user_setting);
+        WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+        clickElement(change_passwordbutton);
+        WaitHelpers.checkVisibility(driver,old_password_input,5);
+        enterInput(old_password_input,"dwdsdewfewff");
+        WaitHelpers.checkVisibility(driver,newpassword_input,5);
+        enterInput(newpassword_input,"iefuG@334444");
+        WaitHelpers.checkVisibility(driver,confirmpassword_input,5);
+        enterInput(confirmpassword_input,"iefuG@334444");
+        clickElement(submit_button);
+        WaitHelpers.checkVisibility(driver,InvalidoldPassword_message,5);
+        String message =  getText(InvalidoldPassword_message);
+        return message;
+    }
+    public String In_changePassword_Sameold_new_Pasword(){
+        WaitHelpers.checkVisibility(driver,user_setting,5);
+        clickElement(user_setting);
+        WaitHelpers.checkVisibility(driver,change_passwordbutton,5);
+        clickElement(change_passwordbutton);
+        WaitHelpers.checkVisibility(driver,old_password_input,5);
+        enterInput(old_password_input,"Shanawaz@123");
+        WaitHelpers.checkVisibility(driver,newpassword_input,5);
+        enterInput(newpassword_input,"Shanawaz@123");
+        WaitHelpers.checkVisibility(driver,confirmpassword_input,5);
+        enterInput(confirmpassword_input,"Shanawaz@123");
+        clickElement(submit_button);
+        WaitHelpers.checkVisibility(driver,Sameold_newPassword,5);
+        String message =  getText(Sameold_newPassword);
         return message;
     }
 
