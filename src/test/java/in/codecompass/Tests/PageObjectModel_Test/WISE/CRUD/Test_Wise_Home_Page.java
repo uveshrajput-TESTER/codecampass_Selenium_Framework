@@ -151,7 +151,7 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         String txt =  homePage.Login().Go_Reconciler_bySearch();
         logger.info("Assertion Started");
         assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
-        Assert.assertEquals(txt,PropertiesReader.readKey("Reconciler"));
+        Assert.assertEquals(txt,PropertiesReader.readKey("Reconciler_txt"));
         logger.info("Done the Test cases");
     }
     @Owner("Uvesh rajput")
@@ -164,7 +164,7 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         String txt =  homePage.Login().Go_Dashboards_bySearch();
         logger.info("Assertion Started");
         assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
-        Assert.assertEquals(txt,PropertiesReader.readKey("Dashboard"));
+        Assert.assertEquals(txt,PropertiesReader.readKey("Dashboards"));
         logger.info("Done the Test cases");
     }
     @Owner("Uvesh rajput")
@@ -281,6 +281,7 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         // Page Class Code (POM Code) - 2
         HomePage homePage = new HomePage(DriverManager.getDriver());
         String txt = homePage.Login().In_changePassword_invalidnewpaswordfield();
+        System.out.println(txt);
         logger.info("Assertion Started");
         assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
         Assert.assertEquals(txt,PropertiesReader.readKey("InvalidSyntaxnewpassword"));
@@ -325,6 +326,7 @@ public class Test_Wise_Home_Page extends CommonToAllTest {
         Assert.assertEquals(txt,PropertiesReader.readKey("Same_old_newpAssword"));
         logger.info("Done the Test cases");
     }
+
 
 
 

@@ -12,6 +12,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.Set;
 
 public class HomePage extends CommonToAllPage {
@@ -26,7 +27,8 @@ public class HomePage extends CommonToAllPage {
     private final By Usermangmt_txt = By.xpath("//strong[normalize-space()='User Management']");
     private final By QueryStudio_bySearch = By.xpath("//div/div/div/a[normalize-space()='Query Studio']");
     private final By Qstdio_txt = By.xpath("//strong[normalize-space()='Query Studio']");
-    private final By dataSource_bySearch = By.xpath("//a[normalize-space()='Data Source']");
+//    private final By dataSource_bySearch = By.xpath("//a[normalize-space()='Data Source']");
+private final By dataSource_bySearch = By.xpath("//div[@class='ant-select-item-option-content']//div//a[normalize-space()='Dashboard']");
     private final By dataSource_txt = By.xpath("//strong[normalize-space()='Data Source']");
     private final By Charts_bySearch = By.xpath("//a[normalize-space()='Charts']");
     private final By Charts_txt = By.xpath("//strong[normalize-space()='Charts']");
@@ -42,9 +44,9 @@ public class HomePage extends CommonToAllPage {
     private final By ReportStudio_txt = By.xpath("//strong[normalize-space()='Report Studio']");
     private final By BroadcastMessage_bySearch = By.xpath("//div[@class='ant-select-item-option-content']//div//a[normalize-space()='Broadcast Message']");
     private final By BroadcastMessage_txt = By.xpath("//strong[normalize-space()='broadcast-message']");
-    private final By Reconciler_bySearch = By.xpath("//a[normalize-space()='ReConciler']");
+    private final By Reconciler_bySearch = By.xpath("//a[normalize-space()='Re Conciler']");
     private final By Reconciller_txt = By.xpath("//strong[normalize-space()='Re Conciler']");
-    private final By Dashboards_bySearch  = By.xpath("//a[normalize-space()='Dashboards']");
+    private final By Dashboards_bySearch  = By.xpath("//a[normalize-space()='Dashboard']");
     private final By Dashboards_txt = By.xpath("//strong[normalize-space()='Dashboards']");
     private final By Task_Schedule_bySearch = By.xpath("//a[normalize-space()='Task & Schedule']");
     private final By Task_Schedule_txt = By.xpath("//strong[normalize-space()='Task & Schedule']");
@@ -65,7 +67,7 @@ public class HomePage extends CommonToAllPage {
    private final By confirmpassword_input = By.id("confirmPassword");
    private final By confirmpasswordempty_mesage =  By.xpath("//div[@class=\"ant-form-item-explain-error\"]");
    private final  By newpasswordlength_message = By.xpath("//div[normalize-space()='Password must be at least 8 characters long!']");
-   private final By newpasswordfieldInvalidSyntax_mesage = By.xpath("//div[normalize-space()='Password must include at least one uppercase letter, one numeric value, and one special character!']");
+   private final By newpasswordfieldInvalidSyntax_mesage = By.xpath("//div[@class='ant-form-item-explain-error']");
    private final By confiempasswordfield_notsameasnewpassword_message = By.xpath("//div[contains(text(),'The new password that you entered do not match!')]");
    private final By InvalidoldPassword_message = By.xpath("//span[normalize-space()  = \"Invalid old password, pls enter correct existing password\"]");
    private final By submit_button = By.xpath("//button[@type='submit']");
@@ -187,7 +189,7 @@ public HomePage Login (){
     }
     public String Go_Reconciler_bySearch(){
         WaitHelpers.checkVisibility(driver,search_input,10);
-        enterInput(search_input,PropertiesReader.readKey("Reconciler_txt"));
+        enterInput(search_input,PropertiesReader.readKey("Reconciler"));
         WaitHelpers.checkVisibility(driver,Reconciler_bySearch,3);
         clickElement(Reconciler_bySearch);
         WaitHelpers.checkVisibility(driver,Reconciller_txt,10);
@@ -197,7 +199,7 @@ public HomePage Login (){
     public String Go_Dashboards_bySearch(){
         WaitHelpers.checkVisibility(driver,search_input,10);
         enterInput(search_input,PropertiesReader.readKey("Dashboard"));
-        WaitHelpers.checkVisibility(driver,Dashboards_bySearch,3);
+//        WaitHelpers.checkVisibility(driver,Dashboards_bySearch,3);
         clickElement(Dashboards_bySearch);
         WaitHelpers.checkVisibility(driver,Dashboards_txt,10);
         String message = getText(Dashboards_txt);
@@ -215,6 +217,7 @@ public HomePage Login (){
 public String Change_to_Arabic(){
        WaitHelpers.checkVisibility(driver,Setting_svg,5);
        clickElement(Setting_svg);
+    WaitHelpers.checkVisibility(driver,Language_option,5);
        clickElement(Language_option);
        WaitHelpers.checkVisibility(driver,Arabic_option,5);
        clickElement(Arabic_option);

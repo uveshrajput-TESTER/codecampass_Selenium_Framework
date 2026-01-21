@@ -21,17 +21,16 @@ public class Test_Wise_Charts_Page extends CommonToAllTest {
     @Owner("Uvesh rajput")
     @Description("TC#1-  ")
     @Test
-    public void test_Goto_Usermanagment() throws Exception {
+    public void test_Goto_Charts() throws Exception {
         logger.info("Starting the TC#1 - ");
         // Page Class Code (POM Code) - 2
         ChartsPage chartspage = new ChartsPage(DriverManager.getDriver());
-        chartspage.Login().Gotocharts();
+        chartspage.Login().Go_Charts_bySearch().ChooseDataSource();
 //        String txt =  homePage.Login().Go_Usermangemnt_bySearch();
 //        logger.info("Assertion Started");
 //        assertThat(txt).isNotBlank().isNotNull().isNotEmpty();
 //        Assert.assertEquals(txt,PropertiesReader.readKey("usermngmt_text"));
 //        logger.info("Done the Test cases");
-
     }
 
 

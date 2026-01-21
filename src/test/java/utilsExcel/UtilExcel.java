@@ -3,6 +3,7 @@ package utilsExcel;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.jspecify.annotations.NonNull;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class UtilExcel {
     static Sheet sheet;
 
 
-    public static Object[][] getTestDataFromExcel(String sheetName) {
+    public static Object[] @NonNull [] getTestDataFromExcel(String sheetName) {
 
         // Apache POI
         // Read the File - TestData.xlsX
