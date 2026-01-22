@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -37,7 +38,16 @@ public class ChartsPage extends CommonToAllPage{
    private final By table_input = By.xpath("//input[@id='rc_select_4']");
    private final By Add_button = By.xpath("//div[@class=\"ant-modal-footer\"]//following::button");
     private final By Charts_bySearch = By.xpath("//a[normalize-space()='Charts']");
-    private final By Charts_txt = By.xpath("//strong[normalize-space()='Charts']");
+    private final By Success_message_of_Tables_connected = By.xpath("//span[contains(normalize-space(),'Columns fetched for ')]");
+    private final By Configuration_Button = By.xpath("//div[contains(text(),'Configurations')]");
+    private final By time_series_field_dropdown =By.xpath("//div[@class='ant-select ant-select-sm ant-select-outlined w-full css-1x5n6pw ant-select-single ant-select-allow-clear ant-select-show-arrow']//span[@class='ant-select-selection-search']");
+    private final By date_column = By.xpath("//div[@id='rc_select_38_list_0']");
+    private final By Xaxis = By.xpath("//button[@class=\"wise-add-column doinline2block\"]");
+//    private final By Xaxis_Columns_inputbox = By.xpath("//input[@id='rc_select_50']");
+    private final By Columns_span = By.xpath("//div[@class='dropdown-container']/div/div/div/div/span/span[@class=\"ant-select-selection-search\"]");
+    private final By Xaxis_Ok_Button = By.xpath("//div[@id='root']//div[3]//button[2]");
+    private final By Apply_config_button = By.xpath("//span[normalize-space()='Apply Config']");
+    private final By txt_Opertaor = By.xpath("//span[normalize-space()='Operator']");
 
     public ChartsPage(WebDriver driver){
         this.driver = driver;
@@ -79,7 +89,7 @@ public ChartsPage Go_Charts_bySearch(){
         clickElement(choosedataSource);
     return this;
 }
-    public void ChooseDataSource(){
+    public String ChooseDataSource(){
      WaitHelpers.checkVisibility(driver,chooseDataSourceType,10);
         WaitHelpers.elementToBeClickable(chooseDataSourceType);
     clickUsingActions(chooseDataSourceType);
@@ -104,12 +114,55 @@ public ChartsPage Go_Charts_bySearch(){
      WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
                 wait.until(ExpectedConditions.elementToBeClickable(Add_button))
                 .click();
-     WaitHelpers.waitJVM(1000);
-
-
-
-
+     WaitHelpers.checkVisibility(driver,Success_message_of_Tables_connected,10);
+     String message = getText(Success_message_of_Tables_connected)   ;
+        return message;
 
     }
+    public ChartsPage ChooseDataSourceNoreturn(){
+        WaitHelpers.checkVisibility(driver,chooseDataSourceType,10);
+        WaitHelpers.elementToBeClickable(chooseDataSourceType);
+        clickUsingActions(chooseDataSourceType);
+        WaitHelpers.checkVisibility(driver,chooseDataSourceType_input,5);
+        enterInputusingActions(chooseDataSourceType_input,"Database");
+        WaitHelpers.checkVisibility(driver, DataSource_inchoosedatasource,5);
+        WaitHelpers.elementToBeClickable(DataSource_inchoosedatasource);
+        clickUsingActions(DataSource_inchoosedatasource);
+        WaitHelpers.checkVisibility(driver,DataSourcefield_input,5);
+        enterInputusingActions(DataSourcefield_input,PropertiesReader.readKey("DataSourcefield_input"));
+        WaitHelpers.checkVisibility(driver, Schema,5);
+        WaitHelpers.elementToBeClickable(Schema);
+        clickUsingActions(Schema);
+        WaitHelpers.checkVisibility(driver,Schema_input,5);
+        enterInputusingActions(Schema_input,PropertiesReader.readKey("Schema_input"));
+        WaitHelpers.checkVisibility(driver, table,5);
+        WaitHelpers.elementToBeClickable(table);
+        clickUsingActions(table);
+        WaitHelpers.checkVisibility(driver,table_input,5);
+        enterInputusingActions2(table_input,PropertiesReader.readKey("table_input"));
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+        wait.until(ExpectedConditions.elementToBeClickable(Add_button))
+                .click();
+        return this;
+    }
+
+    public String  XaxisApplycongig(){
+    WaitHelpers.checkVisibility(driver,Configuration_Button,10);
+    clickElement(Configuration_Button);
+    clickElement(time_series_field_dropdown);
+    PressEnter();
+    clickElement(Xaxis);
+    Actions actions = new Actions(driver);
+    actions.moveToElement(driver.findElement(Columns_span)).click().sendKeys(PropertiesReader.readKey("column_xaxis1"))
+            .keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
+    clickElement(Xaxis_Ok_Button);
+    clickElement(Apply_config_button);
+    WaitHelpers.checkVisibility(driver,txt_Opertaor,5);
+    String message = getText(txt_Opertaor);
+        return message ;
+
+    }
+
 
 }
